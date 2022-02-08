@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/models/unser.class';
 
 @Component({
   selector: 'app-dialog-add-user',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogAddUserComponent implements OnInit {
 
+  user = new User();
+  birthDate: Date | undefined;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  save() {
+    console.log('current user is', this.user)
   }
 
   onNoClick(){

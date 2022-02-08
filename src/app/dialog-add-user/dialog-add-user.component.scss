@@ -1,0 +1,10 @@
+.input-user {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 500px;
+    mat-form-field {
+        text-align: center;
+        margin-right: 16px;
+    }
+}

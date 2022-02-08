@@ -1,19 +1,57 @@
 <h1 mat-dialog-title>Add User</h1>
 <div mat-dialog-content>
 	<div class="input-user">
-		<mat-form-field appearance="legacy">
-            <mat-label>Legacy form field</mat-label>
-            <input matInput placeholder="Placeholder">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Hint</mat-hint>
-          </mat-form-field>
+		<div>
+			<mat-form-field appearance="legacy">
+				<mat-label>First Name</mat-label>
+				<input [(ngModel)]="user.firstName" matInput
+					placeholder="Placeholder"
+					[autofocus]>
 
-          <mat-form-field appearance="legacy">
-            <mat-label>Legacy form field</mat-label>
-            <input matInput placeholder="Placeholder">
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            <mat-hint>Hint</mat-hint>
-          </mat-form-field>
+			</mat-form-field>
+
+			<mat-form-field appearance="legacy">
+				<mat-label>Last Name</mat-label>
+				<input [(ngModel)]="user.lastName" matInput
+					placeholder="Placeholder">
+
+			</mat-form-field>
+		</div>
+		<div>
+			<mat-form-field appearance="legacy">
+				<mat-label>Birth Date</mat-label>
+				<input [(ngModel)]="birthDate" [matDatepicker]="picker"
+					matInput
+					placeholder="Placeholder">
+				<mat-datepicker-toggle [for]="picker"
+					matSuffix></mat-datepicker-toggle>
+					<mat-datepicker #picker></mat-datepicker>
+
+			</mat-form-field>
+		</div>
+
+		<mat-form-field appearance="legacy" class="full-with">
+			<mat-label>Street + House No.</mat-label>
+			<input [(ngModel)]="user.street" matInput
+				placeholder="Placeholder">
+
+		</mat-form-field>
+		<div>
+			<mat-form-field type="number" appearance="legacy">
+				<mat-label>Zip Code</mat-label>
+				<input [(ngModel)]="user.zipCode" matInput
+					placeholder="Placeholder">
+
+			</mat-form-field>
+		</div>
+		<div>
+			<mat-form-field appearance="legacy">
+				<mat-label>City</mat-label>
+				<input [(ngModel)]="user.city" matInput
+					placeholder="Placeholder">
+
+			</mat-form-field>
+		</div>
 	</div>
 </div>
 <div mat-dialog-actions>
@@ -21,7 +59,7 @@
 		mat-button>
 		Cancel
 	</button>
-	<button [mat-dialog-close]
+	<button (click)="save()" [mat-dialog-close]
 		mat-button
 		cdkFocusInitial>
 		Save
