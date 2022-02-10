@@ -48,7 +48,7 @@ import { initializeApp } from 'firebase/app';
     MatNativeDateModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    
+   
     
   ],
   providers: [],
