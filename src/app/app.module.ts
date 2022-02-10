@@ -20,7 +20,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
-import { initializeApp } from 'firebase/app';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 
 
 
@@ -48,6 +49,7 @@ import { initializeApp } from 'firebase/app';
     MatNativeDateModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
    
     
   ],

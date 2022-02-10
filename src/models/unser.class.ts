@@ -1,4 +1,5 @@
 export class User {
+    
     firstName!: String;
     lastName!: String;
     birthDate!: Number;
@@ -15,5 +16,17 @@ export class User {
         this.street = obj ? obj.street : '';
         this.zipCode = obj ? obj.zipCode : '';
         this.city = obj ? obj.city : '';
+    }
+
+
+    public toJSon() {
+        return {
+            firstName: this.firstName,
+            lastName: this.lastName,
+            birthDate: this.birthDate,
+            street: this.street,
+            zipCode: this.zipCode,
+            city: this.city,
+        }
     }
 }
